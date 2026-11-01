@@ -1,0 +1,11 @@
+CREATE INDEX IF NOT EXISTS idx_customer_agent_state_user_id ON customer_agent_state (user_id);
+CREATE INDEX IF NOT EXISTS idx_customer_memory_user_type ON customer_memory (user_id, memory_type);
+CREATE INDEX IF NOT EXISTS idx_agent_tasks_status_schedule ON agent_tasks (status, scheduled_for);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_agent_tasks_idempotency_key ON agent_tasks (idempotency_key);
+CREATE INDEX IF NOT EXISTS idx_agent_action_log_user_created ON agent_action_log (user_id, created_at);
+CREATE INDEX IF NOT EXISTS idx_lead_score_events_user_created ON lead_score_events (user_id, created_at);
+CREATE INDEX IF NOT EXISTS idx_payment_submissions_user ON payment_submissions (user_id);
+CREATE INDEX IF NOT EXISTS idx_payment_submissions_utr ON payment_submissions (extracted_utr);
+CREATE INDEX IF NOT EXISTS idx_payment_submissions_image_hash ON payment_submissions (image_hash);
+CREATE INDEX IF NOT EXISTS idx_payment_review_tasks_status ON payment_review_tasks (review_status);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_payment_idempotency_keys_key ON payment_idempotency_keys (idempotency_key);
