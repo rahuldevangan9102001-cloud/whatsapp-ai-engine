@@ -2,12 +2,14 @@
 
 The WhatsApp agent uses the existing Supabase `users` and `members` tables in
 read-only queries to answer about the downline associated with the sender's
-WhatsApp number. A binary-tree display, link, or login-details request first asks
-the user to provide/confirm their name and mobile number. After both are
-provided, the server checks the name against a Supabase member record associated
-with the sender's WhatsApp number using case-insensitive normalized, partial,
-and minor-typo-tolerant matching, then sends the configured shared portal URL
-regardless of whether the details matched.
+WhatsApp number. Messages containing `link`, `portal`, or `binary`
+(case-insensitive, including within a longer word), or their supported Hindi
+equivalents, receive the shared portal URL before account verification. This
+also applies when a message asks for account information or a verification is
+pending. Link replies are recorded in conversation history after sending; a
+durable inbound-message claim is required to prevent duplicate replies.
+Separate personal account-data requests still require a name and registered
+mobile number.
 
 Configure the shared CRM/tree portal link in the runtime environment:
 
@@ -15,8 +17,8 @@ Configure the shared CRM/tree portal link in the runtime environment:
 BINARY_TREE_URL=https://your-crm.example.com/
 ```
 
-The URL must use HTTP or HTTPS and must not contain embedded credentials. If it
-is not configured, the agent reports that directly rather than inventing one.
+Configure an HTTP or HTTPS URL without embedded credentials. If it is not
+configured, the agent reports that directly rather than inventing one.
 
 The integration expects these existing columns:
 

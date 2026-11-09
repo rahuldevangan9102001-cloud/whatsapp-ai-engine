@@ -6,7 +6,7 @@ import test from 'node:test';
 import {
   normalizeMemory,
   createMemoryService
-} from '../../autonomous/memory_service.js';
+} from './autonomous/memory_service.js';
 
 test('normalizes a valid memory', () => {
   const result = normalizeMemory({

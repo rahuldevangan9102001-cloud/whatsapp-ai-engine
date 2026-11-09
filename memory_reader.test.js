@@ -3,7 +3,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { createMemoryReader } from '../../autonomous/memory_reader.js';
+import { createMemoryReader } from './autonomous/memory_reader.js';
 
 test('reads memories without exposing source objects', () => {
   const memories = [
