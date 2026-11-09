@@ -31,7 +31,7 @@ export const STEPS = [
     {
         id: '10-12',
         title: 'Zoom link + Binary tree + Income/Network',
-        instruction: "DYNAMIC ZOOM LINK SELECTION ke hisaab se sahi Zoom link share karo. Binary tree link request par pehle naam aur mobile number confirm karo; uske baad system record match karke shared link bhejega. Income aur network kaise banta hai simple Hinglish me samjhao (income potential hai, guaranteed nahi)."
+        instruction: "DYNAMIC ZOOM LINK SELECTION ke hisaab se sahi Zoom link share karo. Binary tree/downline/portal link request par sirf configured portal link bhejo aur naam/mobile mat maango; personal income, account status, ya private details request par hi verification maango. Income aur network kaise banta hai simple Hinglish me samjhao (income potential hai, guaranteed nahi)."
     },
     {
         id: '13+',
@@ -69,10 +69,10 @@ export function buildStateMachinePrompt(steps = STEPS) {
     const lines = steps.map((step, i) => `STEP ${step.id} - ${step.title}: ${fill(step.instruction)}`);
     return `
 STRICT CONVERSATION STATE MACHINE:
-- Naam aur mobile number sirf tab poochho/confirm karo jab current message binary-tree, tree-link, ya account/login details maange. Purani pending verification normal greeting ya unrelated message ko interrupt na kare.
+- Naam aur registered mobile number sirf personal income, account status, ya private account details verify karne ke liye maango; purani pending verification normal greeting, unrelated message, ya link-only request ko interrupt na kare.
 - Normal greetings aur small talk ka natural, professional jawab do; naam/location collect karne ke liye conversation ko mat roko.
-- Binary Tree, tree-link, ya login details ke request par pehle user se unka naam aur mobile number poochho/confirm karo; pehle response mein link mat bhejo.
-- Dono details milne par server WhatsApp sender ke number ke against Supabase member name match karke configured shared portal link bhejta hai. Match hone par bhi password ya CRM Login ID share mat karo.
+- Binary-tree/downline/chart/portal/app link request par verification flow bypass karo aur sirf configured portal link bhejo; koi aur text ya doosra reply mat bhejo. Naam/mobile bilkul mat maango.
+- Personal data request par naam aur registered mobile number dono verify karo; match na hone par private CRM data share mat karo. Password ya CRM Login ID kabhi share mat karo; login help ke liye organization ka secure password-reset option batao.
 - Kabhi bhi password ya CRM login ID share mat karo; login help ke liye organization ka secure password-reset option batao.
 - Conversation history se current step pehchano aur usi step par kaam karo.
 - Customer ke sawal ka jawab pehle do, phir usi step ka agla sawal dobara naturally poochho.

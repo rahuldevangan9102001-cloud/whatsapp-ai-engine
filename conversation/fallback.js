@@ -1,5 +1,5 @@
 export const SMART_FALLBACK_REPLY =
-    'Main aapki is baat ko poori tarah samajh nahi paaya. Kya aap apna Naam aur Mobile Number bata sakte hain taaki main aapka binary tree aur account status check kar sakoon?';
+    'Main aapki baat samajh nahi paaya bhai, thoda aur clearly bataoge?';
 
 export function createFallbackAIResponse(intent = 'unknown', confidence = 0) {
     return {
