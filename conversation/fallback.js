@@ -1,5 +1,5 @@
 export const SMART_FALLBACK_REPLY =
-    'Main aapki baat samajh nahi paaya bhai, thoda aur clearly bataoge?';
+    'Aap thoda detail mein bata sakte hain ki kya check karna chahte hain?';
 
 export function createFallbackAIResponse(intent = 'unknown', confidence = 0) {
     return {
@@ -7,7 +7,9 @@ export function createFallbackAIResponse(intent = 'unknown', confidence = 0) {
         confidence,
         intent,
         needsClarification: true,
-        reply: SMART_FALLBACK_REPLY,
+        reply: intent === 'ai_error'
+            ? 'Maafi chahunga, abhi service par thoda update chal raha hai. Kripya kuch der baad try karein.'
+            : SMART_FALLBACK_REPLY,
         quickReplies: []
     };
 }
