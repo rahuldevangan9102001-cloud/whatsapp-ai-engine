@@ -45,12 +45,12 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY.trim();
 // ==========================================
 // 🌟 DUAL SUPABASE CLIENT SETUP (WhatsApp + Binary Tree)
 // ==========================================
-const supabaseUrl = 'https://xapeiifnyuvjhtqpoapo.supabase.co';
-const supabaseKey = 'sb_secret_wdheiHaOX2a5rMmxZKf2dw_aoY6Q3OA';
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const binarySupabaseUrl = 'https://zqnpzmsiwcfibprtmvdg.supabase.co';
-const binarySupabaseKey = 'sb_secret_YdEylJzEJimup06CyD86dw_XLPJrmt2';
+const binarySupabaseUrl = process.env.BINARY_SUPABASE_URL;
+const binarySupabaseKey = process.env.BINARY_SUPABASE_KEY;
 const binarySupabase = createClient(binarySupabaseUrl, binarySupabaseKey);
 
 const binaryTreeService = createBinaryTreeService({
