@@ -124,7 +124,7 @@ async function fetchBinaryUserData(whatsappNumber, searchMobile = null) {
 
 // 2. GEMINI AI CLIENT
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-const GEMINI_MODEL = 'gemini-1.5-flash';
+const GEMINI_MODEL = 'gemini-1.5-flash-latest';
 const GEMINI_RETRY_BASE_DELAY_MS = 1000;
 const aiModel = genAI.getGenerativeModel({ model: GEMINI_MODEL });
 const autonomousRuntimeAdapter = createRuntimeAdapter();
